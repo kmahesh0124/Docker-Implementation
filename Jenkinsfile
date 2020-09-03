@@ -13,7 +13,7 @@ pipeline {
         stage('Checkout SCM') {
             steps {
                 script {
-                    git credentialsId: 'kmahesh0124', url: 'https://github.com/kmahesh0124/Docker-Implementation.git'
+                    git 'https://github.com/kmahesh0124/Docker-Implementation.git'
                 }
             }
         }
