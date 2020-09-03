@@ -31,14 +31,14 @@ pipeline {
                 }
             }
         }
-        stage('Docker Push to Docker Hub') {
+        /*stage('Docker Push to Docker Hub') {
             steps {
                 script {
                     
                     }
                 }
             }
-        }
+        }*/
         stage('Post Cleanup Workspace') {
             steps {
                 script {
