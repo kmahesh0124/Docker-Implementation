@@ -1,7 +1,7 @@
 pipeline {
     agent any
 
-    stages {
+    /*stages {
         stage('Pre Cleanup Workspace') {
             steps {
                 script {
@@ -9,7 +9,7 @@ pipeline {
                     cleanWs()
                 }
             }
-        }
+        }*/
         stage('Checkout SCM') {
             steps {
                 script {
@@ -39,7 +39,7 @@ pipeline {
                 }
             }
         }*/
-        stage('Post Cleanup Workspace') {
+        /*stage('Post Cleanup Workspace') {
             steps {
                 script {
                     sh label: '', script: 'docker system prune -f > /dev/null 2>&1'
@@ -48,4 +48,4 @@ pipeline {
             }
         }
     }
-}
+}*/
