@@ -1,7 +1,7 @@
 pipeline {
     agent any
 
-    /*stages {
+    stages {
         stage('Pre Cleanup Workspace') {
             steps {
                 script {
@@ -9,7 +9,7 @@ pipeline {
                     cleanWs()
                 }
             }
-        }*/
+        }
         stage('Checkout SCM') {
             steps {
                 script {
@@ -31,15 +31,19 @@ pipeline {
                 }
             }
         }
-        /*stage('Docker Push to Docker Hub') {
+        stage('Docker Push to Docker Hub') {
             steps {
                 script {
-                    
+                ls -l
+                sh 'sudo docker version'
+                def passwords='Laxmi\\$\\14'
+                sh "sudo docker login --username maheshwar14 --password ${passwords}"
+                docker push maheshwar14/mahesh:tagname
                     }
                 }
             }
-        }*/
-        /*stage('Post Cleanup Workspace') {
+        }
+        stage('Post Cleanup Workspace') {
             steps {
                 script {
                     sh label: '', script: 'docker system prune -f > /dev/null 2>&1'
@@ -48,4 +52,4 @@ pipeline {
             }
         }
     }
-}*/
+}
